@@ -7,7 +7,8 @@ macro( append_glob list glob )
 endmacro()
 
 ## Header only includes / core headers
-set( INCDIR "../include/pangolin" )
+set( INCDIR "../include/pangolin/" )
+set( INSTALLINCDIR "../include/")
 set( HEADERS
   ${INCDIR}/pangolin.h
   ${INCDIR}/platform.h
@@ -753,7 +754,7 @@ endif()
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/include/${LIBRARY_NAME}/config.h"
   DESTINATION ${CMAKE_INSTALL_PREFIX}/${INSTALL_INCLUDE_DIR}/${LIBRARY_NAME}
 )
-install(DIRECTORY ${INCDIR}
+install(DIRECTORY ${INSTALLINCDIR}
   DESTINATION ${CMAKE_INSTALL_PREFIX}/${INSTALL_INCLUDE_DIR}
 )
 install(TARGETS ${LIBRARY_NAME}
